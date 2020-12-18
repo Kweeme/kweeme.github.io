@@ -1,0 +1,22 @@
+
+<!DOCTYPE html>
+
+<html><head>
+  <title>Kweeme's world</title>
+  <style>
+#main-title {
+text-align: center;
+color: green;
+font-family: monospace;
+}
+body {
+background-color: black;
+}
+hr {
+  border-color:green;
+  }
+</style>
+</head>
+<body>
+<h1 id="main-title"><marquee direction="right">Welcome to my website!</marquee></h1><hr>
+</body></html>
