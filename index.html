@@ -1,14 +1,41 @@
 <!DOCTYPE html>
 <html><head>
   <title>Kweeme's world</title>
+  <script>
+   /* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+  </script>
   <style>
-    /* Dropdown Button */
+   /* Dropdown Button */
 .dropbtn {
-  background-color: #4CAF50;
+  background-color: #3498DB;
   color: white;
   padding: 16px;
   font-size: 16px;
   border: none;
+  cursor: pointer;
+}
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #2980B9;
 }
 
 /* The container <div> - needed to position the dropdown content */
@@ -36,15 +63,11 @@
 }
 
 /* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #ddd;}
+.dropdown-content a:hover {background-color: #ddd}
 
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {display: block;}
-
-/* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .dropbtn {background-color: #3e8e41;}
-    
-#main-title {
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {display:block;}
+    #main-title {
 text-align: center;
 color: green;
 font-family: monospace;
@@ -69,14 +92,17 @@ reorder
     <div class="dropdown">
   <button class="dropbtn"><span class="material-icons">
 reorder
-</span></button>
-  <div class="dropdown-content">
+  </button>
+    <div class="dropdown">
+  <button onclick="myFunction()" class="dropbtn"><span class="material-icons">
+reorder
+  </button></button>
+  <div id="myDropdown" class="dropdown-content">
     <a href="/discord">Discord</a>
-    <a href="#">Soon to come</a>
-    <a href="#">Soon to come</a>
+    <a href="#">Link 2</a>
+    <a href="#">Link 3</a>
   </div>
 </div>
-  </button>
 <h1 id="main-title"><marquee direction="right">Welcome to my website!</marquee></h1><hr>
   
   <h2><a href="/discord">Discord</a></h2>
