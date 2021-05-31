@@ -1,45 +1,26 @@
 <!DOCTYPE html>
 <html><head>
   <title>Kweeme's world | Home</title>
-  <script>
-   /* When the user clicks on the button,
-toggle between hiding and showing the dropdown content */
-function myFunction() {
-  document.getElementById("myDropdown").classList.toggle("show");
-}
-
-// Close the dropdown menu if the user clicks outside of it
-window.onclick = function(event) {
-  if (!event.target.matches('.dropbtn')) {
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
-  }
-}
-  </script>
+  
   <style>
-  #icon {
+ #icon {
   pointer-events: none; 
-  }
+}
   
    /* Dropdown Button */
 .dropbtn {
-  background-color: #007305;
+  background-color: #000000;
   color: white;
   padding: 5px;
   font-size: 16px;
   border: none;
   cursor: pointer;
+	transition: 0.5s;
 }
 
 /* Dropdown button on hover & focus */
 .dropbtn:hover, .dropbtn:focus {
-  background-color: #005804;
+  background-color: #51b955;
 }
 
 /* The container <div> - needed to position the dropdown content */
@@ -52,7 +33,7 @@ window.onclick = function(event) {
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #4caf50;
+  background-color: #000000;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
@@ -60,30 +41,33 @@ window.onclick = function(event) {
 
 /* Links inside the dropdown */
 .dropdown-content a {
-  color: black;
+  color: white;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
+	transition: 0.5s;
 }
 
 /* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #51b955}
+.dropdown-content a:hover {
+	background-color: #51b955;
+}
 
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show {display:block;}
-    #main-title {
-text-align: center;
-color: green;
-font-family: monospace;
+
+
+#main-title {
+	text-align: center;
+	color: black;
+	font-family: Helvetica;
 }
-body {
-background-color: black;
+html {
+background: linear-gradient(#7a7a7a,#999999);
+	height: 100%;
 }
-h2 {
-  color: green;
-    }
 hr {
-  border-color:green;
+  border-color:black;
   }
 </style>
 </head>
@@ -105,4 +89,23 @@ reorder
 
 
 <h1 id="main-title"><marquee direction="right">Welcome to my website!</marquee></h1><hr>
-</body></html>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+
+   /* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+ 
+$("#myDropdown").toggleClass("show");
+}
+
+$(window).on("click", function(event) {
+	if (!event.target.matches('.dropbtn')) {
+		if ($(".dropdown-content").hasClass("show")) {
+			$(".dropdown-content").removeClass("show")
+																								 }
+	}
+})
+</script>
+</html>
